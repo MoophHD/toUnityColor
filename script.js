@@ -1,3 +1,6 @@
+basClr.spellcheck = false;
+uniClr.spellcheck = false;
+
 let hexReg = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i;
 let baseBgColor = "#6686FF";
 
@@ -7,7 +10,7 @@ basClr.addEventListener("keypress", (e) => {
     let toConvert = e.target.value;
     if (toConvert.match(hexReg)) { //hex
         toConvert = hexToRgb(toConvert);
-        // console.log(toConvert);
+        console.log(toConvert);
     } else { //rgb
         toConvert = toConvert.match(/\d{1,3}/g);
     }
@@ -32,7 +35,7 @@ function rgbToUnityRgb(rgb) {
     let arr = [];
 
     rgb.forEach(function(el) {
-        arr.push(Math.round((el/256)*10000)/10000); 
+        arr.push(`(float)${el}/256`);
     }, this);
 
 

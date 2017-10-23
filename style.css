@@ -9,8 +9,6 @@ body {
 }
 
 .wrap {
-    width: 340px;
-    height: 125px;
     position: absolute;
     top: 45%;
     left: 50%;
